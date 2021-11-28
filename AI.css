@@ -1,0 +1,210 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  color: #787d80;
+  letter-spacing: 0.2px;
+}
+
+.container {
+  width: 950px;
+  margin: auto;
+}
+
+.filterBar {
+  margin: 20px 0px;
+}
+
+label {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+th {
+  text-align: left;
+  background-color: #f2f2f2;
+  color: #65696b;
+}
+
+tr:nth-child(odd) {
+  background: #f9f9f9;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+tr:nth-child(even) {
+  background: #fff;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+tr:hover {
+  background-color: #ebf5fb;
+  cursor: default;
+  border: 1px solid #67b2e4;
+}
+
+.username {
+  color: #3498db;
+}
+
+.username:hover,
+a:hover {
+  color: #3498db;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* .activeUser {
+    color: #03AB61;
+ } */
+
+/* .bannedUser, .suspendedUser {
+    font-weight: 600;
+ } */
+.bannedUser {
+  color: red;
+}
+
+.suspendedUser {
+  color: #ff8c00;
+}
+
+.commenter {
+  color: #9a9da0;
+}
+
+.admin,
+.staff,
+.moderator {
+  font-weight: 600;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+nav {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #e9e9e9;
+}
+nav ul li {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+nav ul li {
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+}
+
+.talk {
+  font-size: 24px;
+}
+
+.active {
+  background-color: #f77160;
+  color: white;
+}
+
+.roleHead {
+  width: 115px;
+}
+
+.statusHead {
+  width: 115px;
+}
+
+i {
+  float: right;
+  padding: 0px 15px;
+  color: #787d80;
+  font-size: 12px;
+}
+
+td.activeUser:hover,
+td.suspendedUser:hover,
+td.bannedUser:hover,
+td.commenter,
+td.staff,
+td.admin,
+td.moderator {
+  cursor: pointer;
+}
+
+tr.table-header {
+  border: 1px solid #bbbebf;
+}
+
+.styled-select select {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 29px;
+  padding: 5px; /* If you add too much padding here, the options won't show in IE */
+  width: 100%;
+}
+
+.styled-select {
+  margin-top: 5px;
+  width: 200px;
+  border-radius: 2px;
+  border: 1px solid #9a9da0;
+  color: #3b4a53;
+}
+
+.filter-ui,
+.search-ui {
+  display: inline-block;
+}
+
+input[type="text"] {
+  padding: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+  width: 300px;
+  border: 1px solid #9a9da0;
+  border-radius: 2px;
+}
+
+.search-container button {
+  padding: 10px 5px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #bbbebf;
+  font-size: 13px;
+}
+::-moz-placeholder {
+  color: #bbbebf;
+  font-size: 13px;
+}
+:-ms-input-placeholder {
+  color: #bbbebf;
+  font-size: 13px;
+}
+::placeholder {
+  color: #bbbebf;
+  font-size: 13px;
+}

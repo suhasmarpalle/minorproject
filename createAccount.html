@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link href="CA.css" rel="stylesheet">
+
+    <title>RUPEE BANK</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-8">
+          <div class="form h-100">
+            <h3>ACCOUNT CREATION</h3>
+            <form action="http://localhost:3000/create" class="mb-5"  method="POST" id="contactForm" name="contactForm">
+              <div class="row">
+                
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Email *</label>
+                  <input type="text" class="form-control" name="email" id="email"  placeholder="Your email">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Phone</label>
+                  <input type="text" class="form-control" name="phone" id="phone"  placeholder="Phone #">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Age</label>
+                  <input type="text" class="form-control" name="Age" id="Age"  placeholder="">
+                </div>             
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Gender</label><br>
+                  <input type="radio" id="Male" name="choice" value="Male" autocomplete="off" required>
+                  <label for="Male">Male</label><br>
+                  <input type="radio" id="Female" name="choice" value="Female" autocomplete="off" required>
+                  <label for="css">female</label><br>
+                  <input type="radio" id="Others" name="choice" value="Others" autocomplete="off" required>
+                  <label for="Others">Others</label>                                
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="start">Date of Birth</label>
+                  <input type="date" id="DateOfBirth" name="DateOfBirth"
+                  value="2021-11-10"
+                  min="1900-01-01" max="2003-12-31">                               
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Father's Name</label>
+                  <input type="text" class="form-control" name="Father Name" id="FatherName"  placeholder="">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Marital Status</label>
+                  <input type="text" class="form-control" name="Marital Status" id="MaritalStatus"  placeholder="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group mb-5">
+                  <label for="message" class="col-form-label">Address *</label>
+                  <textarea class="form-control" name="message" id="message" cols="30" rows="4"  placeholder="According to Aadhar Card."></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" name="city"class="col-form-label">City</label>
+                  <input type="text" class="form-control" name="City" id="City"  placeholder="">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">State</label>
+                  <input type="text" class="form-control" name="State" id="State"  placeholder="">
+                </div>
+              </div>
+                <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Country</label>
+                  <input type="text" class="form-control" name="Country" id="Country"  placeholder="">
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">PINCODE</label>
+                  <input type="text" class="form-control" name="PINCODE" id="PINCODE"  placeholder="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <input type="submit" value="CREATE" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+
+            <div id="form-message-warning mt-4"></div> 
+            <div id="form-message-success">
+               thank you!
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-info h-100">
+            <h3>Welcome to Account creation!</h3>
+            <p class="mb-5">Please enter the correct details in the specifed field , the information provided is permanent.</p>
+            <ul class="list-unstyled">
+              <li class="d-flex">
+                <span class="wrap-icon icon-room mr-3"></span>
+                <span class="text">Follw the instruction</span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-phone mr-3"></span>
+                <span class="text"></span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-envelope mr-3"></span>
+                <span class="text">Marpallesuhas@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

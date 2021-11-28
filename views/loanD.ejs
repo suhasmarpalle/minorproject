@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LOANS</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>All the data stored in the table LOAN</h2>
+    <table border="1">
+        <tr>
+            <th>username</th>
+            <th>SANCTION_AMT</th>
+            <th>TENURE</th>
+            <th>LOAN_ID</th>
+            
+           
+        </tr>
+        
+        <%
+        if(loanData.length!=0){
+        var i=1;
+        loanData.forEach(function(data){
+        %>
+        <tr>
+            
+            <td><%=data.USERNAME %></td>
+            <td><%=data.SANCTION_AMT %></td>
+            <td><%=data.TENURE %></td>
+            <td><%=data.LOAN_ID %></td>
+            
+            
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    <h2>All the data stored in the table Customers</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email_id</th>
+            <th>phone_number</th>
+            <th>username</th>
+            <th>password</th>
+           
+        </tr>
+        
+        <%
+        if(userdata.length!=0){
+        var j=1;
+        userdata.forEach(function(data){
+        %>
+        <tr>
+            
+            <td><%=data.NAME %></td>
+            <td><%=data.EMAIL_ID %></td>
+            <td><%=data.PHONE_NO %></td>
+            <td><%=data.USERNAME %></td>
+            <td><%=data.PASSWORD %></td>
+            
+        </tr>
+        <%  j++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

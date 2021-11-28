@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACCOUNT</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>All the data stored in the table Customers</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email_id</th>
+            <th>phone_number</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Father_name</th>
+            <th>marital_status</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>country</th>
+            <th>PINCODE</th>
+           
+        </tr>
+        
+        <%
+        if(userdata.length!=0){
+        var i=1;
+        userdata.forEach(function(data){
+        %>
+        <tr>
+            
+            <td><%=data.NAME %></td>
+            <td><%=data.EMAIL_ID %></td>
+            <td><%=data.PHONE_NO %></td>
+            <td><%=data.AGE %></td>
+            <td><%=data.GENDER %></td>
+            <td><%=data.DOB %></td>
+            <td><%=data.FATHER_NAME %></td>
+            <td><%=data.MARITAL_STATUS %></td>
+            <td><%=data.ADDRESS %></td>
+            <td><%=data.CITY %></td>
+            <td><%=data.STATE %></td>
+            <td><%=data.COUNTRY %></td>
+            <td><%=data.PINCODE %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

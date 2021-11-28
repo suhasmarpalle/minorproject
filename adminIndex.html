@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+
+     <link href="AI.css" rel="stylesheet">
+
+    <title>RUPEE BANK</title>
+  </head>
+  <body>
+    
+    
+        <nav>
+            <ul>
+               <li class="talk">ADMIN</li>
+               <li class="active">transactions</li>
+               <li >Customers</li>
+               <li >FIX DEPOSIT</li>
+               <li>FOREIGN EXCHANGE</li>
+               <li>Loan</li>
+               <li style="float:right">LOGOUT</li>
+            </ul>
+         </nav>
+         <div class="container">
+         <section class="filterBar">
+            <div class="search-ui">
+          <label for="search">Search</label>
+          <div class="search-container">
+             <form action="/action_page.php">
+               <input type="text" placeholder="Search by user name or email address..." name="search">
+               <button type="submit"><i class="fa fa-search"></i></button>
+             </form>
+           </div>
+            </div>
+            <div class="filter-ui">
+         <label for="filters">Show me</label>
+         <div class="styled-select">
+            <select name="accountStatus" id="filters">
+               <option value="active">Everyone</option>
+               <optgroup label="Audience">
+                  <option value="commenters">Commenters</option>
+               </optgroup>
+               <optgroup label="Organization">
+                  <option value="admins">Admins</option>
+                  <option value="moderators">Moderators</option>
+                  <option value="banned">Staff</option>
+               </optgroup>
+            </select>
+         </div>
+            </div>
+         </section>
+         
+         <table>
+            <tr class="table-header">
+               <th>transaction ID</th>
+               <th>From_BanckAcc</th>
+               <th>To_BankAcc</th>
+               <th>Amount</th>
+               
+            </tr>
+            
+         </table>
+         </div>
+         
+         
+         
+  </body>
+  </html>
