@@ -97,7 +97,7 @@ connection.end();
 			}
 				else{
 					console.log(results);
-					 return res.redirect("http://localhost:3000/loanD");
+					 return res.redirect("");
 					
 				}
 			});	
