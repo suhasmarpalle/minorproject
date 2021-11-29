@@ -100,10 +100,7 @@ connection.end();
 					 return res.redirect("http://localhost:3000/loanD");
 					
 				}
-			});
-			
-	
-		
+			});	
 	});
 
 	app.post('/loan',function(req,res){
