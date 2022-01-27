@@ -159,4 +159,20 @@ connection.end();
 
 	
 	
-	
+	app.post('/trans',function(req,res){
+		var trans_data = [];
+		for(const i in req.body){
+			trans_data.push(req.body[i])
+		}
+		console.log(trans_data);
+		let sql="INSERT INTO TRANSCATION  (FROM_BANKACC,TO_BANKACC,TRANSACTION_AMOUNT) VALUES (?,?,?)";
+		
+		connection.query(sql,trans_data, (err,results, fields) => {
+			if(err){return console.error(err.message);}
+		});
+		
+		
+		
+		connection.end();
+		
+		 });
