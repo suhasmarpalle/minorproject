@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="accountejs.css" rel="stylesheet" type="text/css">
 <head>
   <title>ACCOUNT</title>
 </head>
 <body>
-    <div class="table-data">
-<h2>All the data stored in the table Customers</h2>
-    <table border="1">
+<h2>ACCOUNT DETAILS OF ALL THE CUSTOMERS</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
         <tr>
             <th>Name</th>
             <th>Email_id</th>
@@ -21,14 +23,14 @@
             <th>state</th>
             <th>country</th>
             <th>PINCODE</th>
-           
         </tr>
-        
-        <%
+        </thead>
+ <%
         if(userdata.length!=0){
         var i=1;
         userdata.forEach(function(data){
         %>
+        <tbody>
         <tr>
             
             <td><%=data.NAME %></td>
@@ -51,7 +53,8 @@
                 <td colspan="7">No Data Found</td>
             </tr>
         <% } %>
+        <tbody>
     </table>
-    </div>
+</div>
 </body>
 </html>

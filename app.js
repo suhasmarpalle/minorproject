@@ -8,6 +8,7 @@ var fs = require('fs');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const Connection = require("mysql/lib/Connection");
 //app.use(bodyParser.text({type:'text/html'}));
 
 app.use(bodyParser.urlencoded({extended :true}));
@@ -29,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 app.post('/create',function(req,res){
 var insert_data = [];
 for(const i in req.body){
@@ -43,7 +45,7 @@ connection.query(sql,insert_data, (err,results, fields) => {
 
 
 
-connection.end();
+
 
  });
  app.post('/signup',function(req,res){
@@ -60,7 +62,7 @@ connection.end();
 	
 	
 	
-	connection.end();
+	
 	
 	 });
 	
@@ -78,7 +80,7 @@ connection.end();
 		
 		
 		
-		connection.end();
+	
 		
 		 });
 
@@ -117,7 +119,7 @@ connection.end();
 		
 		
 		
-		connection.end();
+		
 		
 		 });
 	
@@ -128,7 +130,7 @@ connection.end();
 	    console.log(data);
 		res.render('Cus', { title: 'Cus', userdata: data});
 	  });
-	  connection.end();
+	  
 	});
 	app.get('/account', function(req, res, next) {
 		var sql='SELECT * FROM account' ;
@@ -137,7 +139,7 @@ connection.end();
 	    console.log(data);
 		res.render('account', { title: 'account', userdata: data});
 	  });
-	  connection.end();
+	
 	});
 	app.get('/loanD', function(req, res, next) {
 		var sql='SELECT * FROM loan' ;
@@ -171,8 +173,17 @@ connection.end();
 			if(err){return console.error(err.message);}
 		});
 		
+		    const FROM_BANKACC=trans_data[0];
+			const TO_BANKACC=trans_data[1];
+			const amount=trans_data[2];
+			const TRANSACTION_AMOUNT=parseInt(amount);
+			console.log(typeof TRANSACTION_AMOUNT);
+		let sql1="UPDATE MONEY SET AMOUNT= AMOUNT-"+TRANSACTION_AMOUNT+"WHERE NAME="+FROM_BANKACC;
+		let sql2="UPDATE MONEY SET AMOUNT= AMOUNT+"+TRANSACTION_AMOUNT+"WHERE NAME="+TO_BANKACC;
+        connection.query(sql1,sql2, (err,results, fields) => {
+			if(err){return console.error(err.message);}
+		});
 		
 		
-		connection.end();
 		
 		 });
