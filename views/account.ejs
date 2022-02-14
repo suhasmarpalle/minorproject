@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="accountejs.css" rel="stylesheet" type="text/css">
-<head>
-  <title>ACCOUNT</title>
-</head>
-<body>
-<h2>ACCOUNT DETAILS OF ALL THE CUSTOMERS</h2>
-<div class="table-wrapper">
-    <table class="fl-table">
+  <link href="accountejs.css" rel="stylesheet" type="text/css" />
+  <head>
+    <title>ACCOUNT</title>
+  </head>
+  <body>
+    <h2>ACCOUNT DETAILS</h2>
+    <div class="table-wrapper">
+      <table class="fl-table">
         <thead>
-        <tr>
+          <tr>
             <th>Name</th>
             <th>Email_id</th>
             <th>phone_number</th>
@@ -23,16 +23,11 @@
             <th>state</th>
             <th>country</th>
             <th>PINCODE</th>
-        </tr>
+          </tr>
         </thead>
- <%
-        if(userdata.length!=0){
-        var i=1;
-        userdata.forEach(function(data){
-        %>
+        <% if(userdata.length!=0){ var i=1; userdata.forEach(function(data){ %>
         <tbody>
-        <tr>
-            
+          <tr>
             <td><%=data.NAME %></td>
             <td><%=data.EMAIL_ID %></td>
             <td><%=data.PHONE_NO %></td>
@@ -46,15 +41,16 @@
             <td><%=data.STATE %></td>
             <td><%=data.COUNTRY %></td>
             <td><%=data.PINCODE %></td>
-        </tr>
-        <%  i++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="7">No Data Found</td>
-            </tr>
-        <% } %>
-        <tbody>
-    </table>
-</div>
-</body>
+          </tr>
+          <% i++; }) %> <% } else{ %>
+          <tr>
+            <td colspan="7">No Data Found</td>
+          </tr>
+          <% } %>
+        </tbody>
+
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
 </html>

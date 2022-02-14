@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="fme_CSS.css" rel="stylesheet" />
+
+    <title>RUPEE BANK</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Foreign Currency Exchange</h1>
+      </div>
+      <div class="row">
+        <h4 style="text-align: center">
+          Please check the conversion rates before making any requests
+        </h4>
+      </div>
+
+      <div
+        class="row input-container"
+        action="http://localhost:3000/FME"
+        method="POST"
+      >
+        <div class="col-xs-12">
+          <div class="styled-input wide">
+            <input type="text" required />
+            <label>Amount</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="styled-input">
+            <input type="text" required />
+            <label>Sender Account Name</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="styled-input" style="float: right">
+            <input type="text" required />
+            <label>Receiver Account Name</label>
+          </div>
+        </div>
+
+        <div>
+          <img src="FCERates.jpg" width="400" height="235" alt="FME" />
+        </div>
+
+        <div class="col-xs-12">
+          <div class="btn-lrg submit-btn">CONFIRM</div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="//d26tpo4cm8sb6k.cloudfront.net/js/common.js" async></script>/-->
+  </body>
+</html>

@@ -8,8 +8,9 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const Connection = require("mysql/lib/Connection");
+var CryptoJS = require("crypto-js");
 //app.use(bodyParser.text({type:'text/html'}));
-let login_data = [];
+const login_data = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -47,14 +48,21 @@ app.post("/create", function (req, res) {
 });
 app.post("/signup", function (req, res) {
   var signup_data = [];
+
   for (const i in req.body) {
     signup_data.push(req.body[i]);
   }
   console.log(signup_data);
+  var array1 = CryptoJS.AES.encrypt(
+    JSON.stringify(signup_data),
+    "secret key 123"
+  ).toString();
+  console.log(array1);
+
   let sql =
     "INSERT INTO CUSTOMER  (NAME,EMAIL_ID,PHONE_NO,USERNAME,PASSWORD) VALUES (?,?,?,?,?)";
 
-  connection.query(sql, signup_data, (err, results, fields) => {
+  connection.query(sql, array1, (err, results, fields) => {
     if (err) {
       return console.error(err.message);
     }
@@ -82,16 +90,56 @@ app.post("/login", function (req, res) {
   }
   console.log(login_data);
   let sql = "SELECT * FROM customer WHERE USERNAME= ? AND password =?";
-  let name1 = login_data[0];
-  connection.query(sql, login_data, (err, results, fields) => {
-    if (results.length == 0) {
-      console.log("invalid input");
-    } else {
-      console.log(results);
 
-      res.render("index", { title: "index", name: name1 });
-    }
-  });
+  var name1 = login_data[0];
+  if (name1 == "admin") {
+    res.render("adminCus");
+  } else {
+    connection.query(sql, login_data, (err, results, fields) => {
+      if (results.length == 0) {
+        console.log("invalid input");
+      } else {
+        console.log(results);
+
+        res.render("index", { title: "index", name: name1 });
+      }
+    });
+  }
+});
+app.get("/Homepage", (req, res) => {
+  var name1 = login_data[0];
+  res.render("index", { title: "index", name: name1 });
+});
+//app.get("/login", (req, res) => {
+//var name1 = login_data[0];
+//let sql1 = "SELECT COUNT(account_id)  AS aCOUNT FROM account where name=?";
+//connection.query(sql1, [name1], (err, data, fields) => {
+//  if (err) {
+//return console.error(err.message);
+//} else {
+//console.log(data);
+
+// res.render("index", { title: "index", aCOUNT: data });
+//}
+// });
+//});
+app.get("/CA", function (req, res) {
+  res.render("createAccount");
+});
+app.get("/LOANHTML", function (req, res) {
+  res.render("LOAN");
+});
+app.get("/FMEHTML", function (req, res) {
+  res.render("FME");
+});
+app.get("/transHTML", function (req, res) {
+  res.render("transaction");
+});
+app.get("/LP", function (req, res) {
+  res.render("login");
+});
+app.get("/SU", function (req, res) {
+  res.render("signup");
 });
 
 app.post("/loan", function (req, res) {
@@ -115,6 +163,15 @@ app.get("/Cus", function (req, res, next) {
     if (err) throw err;
     console.log(data);
     res.render("Cus", { title: "Cus", userdata: data });
+  });
+});
+app.get("/VA", function (req, res, next) {
+  var NAME = login_data[0];
+  var sql = "SELECT * FROM account where name=?";
+  connection.query(sql, [NAME], function (err, data, fields) {
+    if (err) throw err;
+    console.log(data);
+    res.render("account", { title: "account", userdata: data });
   });
 });
 app.get("/account", function (req, res, next) {
@@ -151,22 +208,18 @@ app.post("/trans", function (req, res) {
   console.log(trans_data);
   let sql =
     "INSERT INTO TRANSCATION  (FROM_BANKACC,TO_BANKACC,TRANSACTION_AMOUNT) VALUES (?,?,?)";
-
   connection.query(sql, trans_data, (err, results, fields) => {
     if (err) {
       return console.error(err.message);
     }
   });
-
   var FROM_BANKACC = trans_data[0];
   var TO_BANKACC = trans_data[1];
   var amount = trans_data[2];
   var TRANSACTION_AMOUNT = parseInt(amount);
   console.log(typeof TRANSACTION_AMOUNT);
   let sql1 = "UPDATE MONEY SET AMOUNT= AMOUNT- ? WHERE NAME=?";
-
   let sql2 = "UPDATE MONEY SET AMOUNT= AMOUNT+ ? WHERE NAME=?";
-
   connection.query(
     sql1,
     [TRANSACTION_AMOUNT, FROM_BANKACC],
