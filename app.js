@@ -62,7 +62,7 @@ app.post("/signup", function (req, res) {
   let sql =
     "INSERT INTO CUSTOMER  (NAME,EMAIL_ID,PHONE_NO,USERNAME,PASSWORD) VALUES (?,?,?,?,?)";
 
-  connection.query(sql, array1, (err, results, fields) => {
+  connection.query(sql, signup_data, (err, results, fields) => {
     if (err) {
       return console.error(err.message);
     }
@@ -235,6 +235,7 @@ app.post("/trans", function (req, res) {
     (err, results, fields) => {
       if (err) {
         return console.error(err.message);
+        h;
       }
     }
   );
